@@ -1,0 +1,77 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+
+
+    <head>
+      <title py:block="title">Your title goes here</title>
+      <py:block name="head_content">
+        <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/admin.css')}" />
+      </py:block>
+    </head>
+<!--["apple", "orange", "kiwi"]-->
+   <body>
+<?python
+import os
+import time
+import logging
+#import MySQLdb
+#import torndb
+#import tornado.escape
+#import smtplib
+from smtplib import SMTP, SMTPException
+# *******
+##import bcrypt
+#import concurrent.futures
+#import MySQLdb
+#import markdown
+import pymysql
+import os.path
+#import re
+#import subprocess
+#import torndb
+#import tornado.escape
+from pygments.lexer import include
+#from urllib import parse
+#from tornado import gen
+#import tornado.httpserver
+#import tornado.ioloop
+#import tornado.options
+#import tornado.web
+#import unicodedata
+import os.path, random, string
+#from tornado.options import define, options
+# *******
+from tornado import gen
+import pymysql.cursors
+#from tornado.ioloop import IOLoop
+#from tornado.web import Application, RequestHandler
+#from tornado.websocket import WebSocketHandler
+from tornado.options import define, options
+from connect import Connect
+#from feed import Feed
+from django.core.validators import slug_re
+from IPython.terminal.shortcuts import cursor_in_leading_ws
+#define("mysql_host", default="carlozanieri.net", help="prolocosanpiero database host")
+#define("mysql_database", default="prolocosanpiero", help="prolocosanpiero database name")
+#define("mysql_user", default="root", help="prolocosanpiero database user")
+#define("mysql_password", default="trex39", help="prolocosanpiero database password")
+db = pymysql.connect("carlozanieri.net", "root", "trex39","prolocosanpiero", cursorclass=pymysql.cursors.DictCursor)
+cursor=db.cursor()
+cursor.execute("SELECT * ,concat(dir,img) as immagine FROM entries ORDER BY published ")
+fruits =  cursor.fetchall()
+title = "A Kajiki Template"
+#fruits = ["apple", "orange", "kiwi"]
+        rss=Connect
+?>
+    <p>These are some of my favorite fruits:</p>
+    <ul>
+      <li py:for="fruit in fruits">
+        I like ${fruit["title"]}
+      </li>
+    </ul>
+  </body>
+</html>

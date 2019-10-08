@@ -1,0 +1,15 @@
+#!/bin/sh
+/usr/bin/sudo fuser -k 8000/tcp &
+
+
+echo Starting ProlocoInfo
+trap '' 1
+LANG=
+export LANG
+#PERLIO=:raw
+unset PERLIO
+export PERLIO
+PERLLIB=/opt/webmin
+export PERLLIB
+cd /home/carlo/ProlocoSanpiero/Info
+exec '/home/carlo/ProlocoSanpiero/tgenv/bin/gearbox' $* serve --reload  &

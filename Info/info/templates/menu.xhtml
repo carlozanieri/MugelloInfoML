@@ -1,0 +1,91 @@
+<html lang="en" class="no-js" xmlns:py="http://www.w3.org/1999/xhtml">
+<head xmlns:py="http://www.w3.org/1999/xhtml">
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title></title>
+		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
+		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="${tg.url('/css/normalize.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/css/demo.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/css/component.css')}" />
+		<script src="${tg.url('/javascript/modernizr.custom.js')}"></script>
+	</head>
+	<body>
+<?python
+from connect import Connect
+menus = Connect.menu("")
+title = "Mugello INFO"
+
+?>
+		<div class="container">
+            <ul class="nav navbar-nav">
+				<li  py:for="menu in menus" class="sliding-element"><a href="${menu['link']}">${menu['titolo']}</a></li>
+
+       <!--  <li py:for="menu in menus" class="${('', 'active')[self.defined('page') and page=='index']}"><a href="${menu['link']}">${menu['titolo']}</a></li>
+       <li class="${('', 'active')[self.defined('page') and page=='about']}"><a href="${tg.url('/about')}">About</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='data']}"><a href="${tg.url('/data')}">Serving Data</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='environ']}"><a href="${tg.url('/environ')}">WSGI Environment</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='confe']}"><a href="${tg.url('/confe')}">Conferenza</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='meeting']}"><a href="${tg.url('/meeting')}">Meeting</a></li>
+         <li class="${('', 'active')[self.defined('page') and page=='include']}"><a href="${tg.url('/include')}">INCLUDE</a></li> -->
+      </ul>
+
+			<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+							<!--	<li class="gn-search-item">
+									<input placeholder="Search" type="search" class="gn-search"/>
+									<a class="gn-icon gn-icon-search"><span>Search</span></a>
+								</li>-->
+								<li>
+									<a class="gn-icon gn-icon-download">Downloads</a>
+									<ul class="gn-submenu">
+										 <li py:for="menu in menus" class="${('', 'active')[self.defined('page') and page=='index']}"><a href="${tg.url('')}${menu['link']}">${menu['titolo']}</a></li>
+                                      <!--   <li ><a class="gn-icon gn-icon-article" href="${tg.url('/')}">HOME</a></li>
+										 <li class="${('', 'active')[self.defined('page') and page=='about']}"><a href="${tg.url('/about')}">About</a></li>
+        								<li class="${('', 'active')[self.defined('page') and page=='data']}"><a href="${tg.url('/data')}">Serving Data</a></li>
+        								<li class="${('', 'active')[self.defined('page') and page=='environ']}"><a href="${tg.url('/environ')}">WSGI Environment</a></li>
+        								<li class="${('', 'active')[self.defined('page') and page=='confe']}"><a href="${tg.url('/confe')}">Conferenza</a></li>
+										<li class="${('', 'active')[self.defined('page') and page=='meeting']}"><a href="${tg.url('/meeting')}">Meeting</a></li>
+         								<li class="${('', 'active')[self.defined('page') and page=='include']}"><a href="${tg.url('/include')}">INCLUDE</a></li> -->
+									</ul>
+								</li>
+								<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+								<li><a class="gn-icon gn-icon-help">Help</a></li>
+								<li>
+									<a class="gn-icon gn-icon-archive">Archives</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-article">Articles</a></li>
+										<li><a class="gn-icon gn-icon-pictures">Images</a></li>
+										<li><a class="gn-icon gn-icon-videos">Videos</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+				<!--
+                 <li class="${('', 'active')[self.defined('page') and page=='index']}"><a href="${tg.url('/')}">HOME</a></li>
+                <li class="${('', 'active')[self.defined('page') and page=='about']}"><a href="${tg.url('/about')}">About</a></li>
+                 <li class="${('', 'active')[self.defined('page') and page=='data']}"><a href="${tg.url('/data')}">Serving Data</a></li>
+                 <li class="${('', 'active')[self.defined('page') and page=='environ']}"><a href="${tg.url('/environ')}">WSGI Environment</a></li>
+                 <li class="${('', 'active')[self.defined('page') and page=='confe']}"><a href="${tg.url('/confe')}">Conferenza</a></li>
+                <li class="${('', 'active')[self.defined('page') and page=='meeting']}"><a href="${tg.url('/meeting')}">Meeting</a></li>
+                <li class="${('', 'active')[self.defined('page') and page=='include']}"><a href="${tg.url('/include')}">INCLUDE</a></li> -->
+			</ul>
+
+		</div><!-- /container -->
+		<script src="${tg.url('/javascript/classie.js')}"></script>
+		<script src="${tg.url('/javascript/gnmenu.js')}"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+	</body>
+</html>

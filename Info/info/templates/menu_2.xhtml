@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:py="http://www.w3.org/1999/xhtml">
+<head xmlns:py="http://www.w3.org/1999/xhtml">
+
+
+<link rel="stylesheet" type="text/css" href="${tg.url('/css/menu/styles.css')}"/>
+<script type="text/javascript" src="${tg.url('/javascript/jquery.js')}"/>
+<script type="text/javascript" src="${tg.url('/javascript/sliding_effect.js')}"/>
+<!--END-->
+
+	<link href="${tg.url('/css/menu/style.css')}" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="${tg.url('/css/stile.css')}" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="${tg.url('/css/menu/style.css')}" rel="stylesheet" type="text/css" media="screen"/>
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css/'/>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'/>
+<script type="text/javascript" src="${tg.url('/javascript/jquery-1.11.1.min.js')}"></script>
+
+</head>
+<div id="container">
+<?python
+from connect import Connect
+menus = Connect.menu("")
+title = "A Kajiki Template"
+
+?>
+<header>
+    	<div class="menu">
+        	<div class="closeButton"><a class="icon-close"></a></div>
+        		<ul>
+              	    <li  py:for="menu in menus" class="sliding-element">
+
+
+			<a href="${menu['titolo']}">${menu['link']}</a>
+
+
+	</li>
+                </ul>
+        </div>
+        <div id="menuButton"><a class="icon-menu"></a></div>
+</header>
+
+</div>
+
+<script>
+	$('#menuButton').click(function()
+{
+	   $('.menu').
+            animate({"left":"0px"}, 1000);
+       });
+
+       $('.closeButton').click(function()
+{
+	   $('.menu').animate({"left":"-200px"}, 1000);
+});
+
+</script>
+
+</html>

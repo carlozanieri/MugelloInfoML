@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+
+
+    <head>
+      <title py:block="title">Your title goes here</title>
+      <py:block name="head_content">
+        <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/admin.css')}" />
+      </py:block>
+    </head>
+
+    <body>
+     <div>
+        <py:import hef="${tg.url('/connect.py')}" alias="lib"/>
+
+  <span py:with="y=7; x=5; z=x+10; item='item'"> $item $x $y $z</span>
+</div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html py:extends="master.xhtml" py:strip="True" xmlns:py="http://www.w3.org/1999/XSL/Transform">
+    <head py:block="head" py:strip="True">
+        <title py:block="master_title">Mugello INFO</title>
+
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+   <link rel="shortcut icon" href="${tg.url('favicon.ico')}" type="image/x-icon"/>
+    <link rel="icon" href="${tg.url('favicon.ico')}" type="image/x-icon"/>
+    <link href="${tg.url('/css/metro-all.css')}" rel="stylesheet"/>
+    <link href="${tg.url('/css/start.css')}" rel="stylesheet"/>
+    <title>Mugello Info</title>
+    <script src="${tg.url('/javascript/jquery-3.3.1.min.js')}"></script>
+    <script src="${tg.url('/javascript/metro.js')}"></script>
+    <script src="{${tg.url('/javascript/start.js')}"></script>
+</head>
+<body  class="bg-darkIndigo fg-white">
+<?python
+from connect import Connect
+centralinos = Connect.centralino("")
+
+title = "Mugello INFO"
+
+?>
+
+<div  style="display: inline; " class="tiles-area" >
+
+
+      <div style="display: inline ;" >
+         <span py:for="centralino in centralinos" style="display:inline; " data-role="tile"  class="tiles-grid tiles-group size-2 bg-white fg-darkBlue">
+
+             <a href="${centralino['link']}" >
+                 <span  class="${centralino['icon']  }"> <span style="font-size: 18pt; ">${centralino['titolo']} da remoto </span></span>
+             </a>
+         </span>
+      </div>
+</div>
+
+
+</body>
+</html>
