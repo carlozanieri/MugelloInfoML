@@ -128,6 +128,11 @@ class RootController(BaseController):
         """Handle the 'meeting' page."""
         return dict(page='meeting')
 
+    @expose('info.templates.barberino')
+    def barberino(self):
+        """Handle the 'meeting' page."""
+        return dict(page='barberino')
+    
     @expose('info.templates.include')
     def include(self):
         """Handle the 'include' page."""
@@ -152,6 +157,7 @@ class RootController(BaseController):
     def centralino(self):
         """Handle the 'footer' page."""
         return dict(page='centralino')
+
 
     @expose('info.templates.slider')
     def slider(self):
