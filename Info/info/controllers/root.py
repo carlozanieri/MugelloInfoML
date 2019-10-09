@@ -132,7 +132,7 @@ class RootController(BaseController):
     def barberino(self):
         """Handle the 'meeting' page."""
         return dict(page='barberino')
-    
+
     @expose('info.templates.include')
     def include(self):
         """Handle the 'include' page."""
