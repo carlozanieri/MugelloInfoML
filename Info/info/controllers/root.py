@@ -43,7 +43,7 @@ class RootController(BaseController):
     @expose('info.templates.index')
     def index(self):
         """Handle the front-page."""
-        return dict(page='centralino')
+        return dict(page='index')
     @expose('info.templates.about')
     def about(self):
         """Handle the 'about' page."""
