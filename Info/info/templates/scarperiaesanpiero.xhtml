@@ -1,0 +1,57 @@
+<html py:extends="master.xhtml" py:strip="True" xmlns:py="http://www.w3.org/1999/XSL/Transform">
+    <head py:block="head" py:strip="True">
+        <title py:block="master_title">Mugello INFO</title>
+    </head>
+
+    <body py:block="body" py:strip="True">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="jumbotron">
+
+            <h2 style="color: #b50606;">Benvenuto in Mugello INFO</h2>
+            <p style="color: #b20606; font-size: 18pt;font-weight: bold;">Qui potrai trovare tutte le informazioni sulla nostra splendida valle.</p>
+
+            <p>
+              <a class="btn btn-primary btn-lg" style="background-color: #b20606; font-size: 16pt;" href="https://www.mugelloinfo.it/confe/?UfficioTurismoUnioneComuni" target="_blank">
+                ${h.icon('book')} Se non trovi quello che cerchi,  <br></br> puoi collegarti in videoconferenza <br></br> con l'Ufficio Turismo dell'Unione dei Comuni del Mugello.
+              </a>
+            </p>
+          </div>
+        </div>
+        <!--<div class="col-md-4 hidden-xs hidden-sm">
+          <a class="btn btn-info btn-sm active" href="http://turbogears.readthedocs.io/en/latest">${h.icon('book')} TG2 Documentation</a> <span class="label label-success">new</span><em> Get Started</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://turbogears.readthedocs.io/en/latest/cookbook/cookbook.html">${h.icon('book')} TG2 CookBook</a><em> Read the Cookbook</em> <br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://groups.google.com/group/turbogears">${h.icon('comment')} Join the Mail List</a> <em>for help/discussion</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://runnable.com/TurboGears">${h.icon('play')} Play on Runnable</a> <em>for basic examples</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://stackoverflow.com/questions/tagged/turbogears2">${h.icon('search')} Search Stackoverflow</a> <em>for questions</em>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Code your data model</h3>
+          <p> Design your data <code>model</code>, Create the database, and Add some bootstrap data.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Design your URL architecture</h3>
+          <p> Decide your URLs, Program your <code>controller</code> methods, Design your
+            <code>templates</code>, and place some static files (CSS and/or Javascript). </p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Distribute your app</h3>
+          <p> Test your source, Generate project documents, Build a distribution.</p>
+        </div>
+      </div>
+
+      <em class="pull-right small"> Grazie per aver scelto ProlocoInfo.</em>-->
+           <py:include href = "slider.xhtml" />
+      </div>
+    </body>
+</html>

@@ -133,6 +133,11 @@ class RootController(BaseController):
         """Handle the 'meeting' page."""
         return dict(page='barberino')
 
+    @expose('info.templates.scarperiaesanpiero')
+    def scarperiaesanpiero(self):
+        """Handle the 'meeting' page."""
+        return dict(page='scarperiaesanpiero')
+
     @expose('info.templates.include')
     def include(self):
         """Handle the 'include' page."""
