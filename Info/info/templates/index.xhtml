@@ -30,7 +30,7 @@ title = "Mugello INFO"
          <span py:for="centralino in centralinos" style="display:inline; " data-role="tile"  class="tiles-grid tiles-group size-2 bg-white fg-darkBlue">
 
              <a href="${centralino['link']}" >
-                 <span  class="${centralino['icon']  }"> <span style="font-size: 18pt; "><img src= "${tg.url('/img/vicchio/vicchio_logo.jpg')}"/> ${centralino['titolo']}</span></span>
+                 <span  class="${centralino['icon']  }"> <span style="font-size: 18pt; "><img src= "${tg.url('${centralino['icon']}')}"/> ${centralino['titolo']}</span></span>
              </a>
          </span>
       </div>
