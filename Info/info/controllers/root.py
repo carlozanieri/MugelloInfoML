@@ -143,6 +143,11 @@ class RootController(BaseController):
         """Handle the 'meeting' page."""
         return dict(page='vicchio')
 
+    @expose('info.templates.marradi')
+    def marradi(self):
+        """Handle the 'meeting' page."""
+        return dict(page='marradi')
+
     @expose('info.templates.dicomano')
     def dicomano(self):
         """Handle the 'meeting' page."""
