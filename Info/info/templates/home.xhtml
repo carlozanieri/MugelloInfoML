@@ -29,8 +29,8 @@ title = "Mugello INFO"
       <div style="display: inline ;" >
          <span py:for="centralino in centralinos" style="display:inline; " data-role="tile"  class="tiles-grid tiles-group size-2 bg-white fg-darkBlue">
 
-             <a href="https://www.mugelloinfo.it/home" >
-                 <span  class="${centralino['icon']  }"> <span style="font-size: 18pt; "><img style="height: 50px;" src= "${tg.url('')}img/icone-lingua/inglese.jpg"/> English</span></span>
+             <a href="${centralino['link']}" >
+                 <span  class="${centralino['icon']  }"> <span style="font-size: 18pt; "><img style="height: 50px;" src= "${tg.url('')}${centralino['icon']}"/> ${centralino['titolo']}</span></span>
              </a>
          </span>
       </div>
