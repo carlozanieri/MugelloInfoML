@@ -10,7 +10,7 @@ hupper==1.8.1
 # Editable install with no version control (Info==0.1)
 -e /home/carlo/MugelloInfo/Info
 Kajiki==0.8.0
-Mako==1.0.13
+Mako==1.2.2
 MarkupSafe==1.1.1
 nine==1.0.0
 PasteDeploy==2.0.1
